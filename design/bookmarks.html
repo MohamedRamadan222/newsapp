@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NewsApp — Saved</title>
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/screens.css" />
+</head>
+<body>
+  <div class="phone">
+    <div class="phone__scroll">
+      <header class="appbar">
+        <div class="appbar__logo" aria-hidden="true">N</div>
+        <div class="appbar__title">
+          <strong>Saved</strong>
+          <span>3 articles • reading offline</span>
+        </div>
+        <a class="icon-btn" href="search.html" aria-label="Search saved">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </a>
+      </header>
+
+      <main>
+        <section class="section" aria-labelledby="saved-title">
+          <div class="section-head container">
+            <h2 class="t-section" id="saved-title">Your reading list</h2>
+            <a class="link-more" href="bookmarks.html">Clear all</a>
+          </div>
+          <div class="news-list">
+            <a class="news-card" href="article.html">
+              <img class="news-card__thumb" src="https://picsum.photos/seed/starship/200/200" alt="Starship saved thumbnail" width="88" height="88" />
+              <span class="news-card__body">
+                <span class="meta"><span>SpaceX</span><span class="meta__dot">4h ago</span></span>
+                <span class="t-title">Starship completes key test ahead of next launch attempt</span>
+                <span class="news-card__foot"><span class="meta">4 min read</span><span class="bookmark-btn bookmark-btn--saved" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg></span></span>
+              </span>
+            </a>
+            <a class="news-card" href="article.html">
+              <img class="news-card__thumb" src="https://picsum.photos/seed/webb/200/200" alt="Webb saved thumbnail" width="88" height="88" />
+              <span class="news-card__body">
+                <span class="meta"><span>ESA</span><span class="meta__dot">6h ago</span></span>
+                <span class="t-title">Webb telescope spots distant galaxy in stunning detail</span>
+                <span class="news-card__foot"><span class="meta">6 min read</span><span class="bookmark-btn bookmark-btn--saved" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg></span></span>
+              </span>
+            </a>
+            <a class="news-card" href="article.html">
+              <img class="news-card__thumb" src="https://picsum.photos/seed/nasa-iss/200/200" alt="ISS saved thumbnail" width="88" height="88" />
+              <span class="news-card__body">
+                <span class="meta"><span>NASA</span><span class="meta__dot">2h ago</span></span>
+                <span class="t-title">NASA adjusts ISS flight schedule for upcoming missions</span>
+                <span class="news-card__foot"><span class="meta">5 min read</span><span class="bookmark-btn bookmark-btn--saved" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg></span></span>
+              </span>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a href="index.html">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 3l9 8.5"/><path d="M5 10.5V21h5v-6h4v6h5V10.5"/></svg>
+        Home
+      </a>
+      <a href="search.html">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        Search
+      </a>
+      <a href="bookmarks.html" aria-current="page">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>
+        Saved
+      </a>
+      <a href="categories.html">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>
+        Topics
+      </a>
+    </nav>
+  </div>
+</body>
+</html>

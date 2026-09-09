@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NewsApp — Topics</title>
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/screens.css" />
+</head>
+<body>
+  <div class="phone">
+    <div class="phone__scroll">
+      <header class="appbar">
+        <a class="icon-btn" href="index.html" aria-label="Back to home">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        </a>
+        <div class="appbar__title">
+          <strong>Topics</strong>
+          <span>Pick what you follow</span>
+        </div>
+      </header>
+
+      <main>
+        <!-- Grid -> Flutter GridView.count(crossAxisCount: 2) -->
+        <div class="cat-grid">
+          <a class="cat-tile" href="index.html">
+            <span class="cat-tile__icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M14 4c3-2 7-2 7-2s0 4-2 7l-7 7-5-5z"/><circle cx="15" cy="9" r="1.6"/></svg></span>
+            <strong>NASA</strong>
+            <span>128 stories • Following</span>
+          </a>
+          <a class="cat-tile" href="index.html">
+            <span class="cat-tile__icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span>
+            <strong>SpaceX</strong>
+            <span>96 stories • Following</span>
+          </a>
+          <a class="cat-tile" href="index.html">
+            <span class="cat-tile__icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M8 20h8M12 16v4" stroke-linecap="round"/></svg></span>
+            <strong>Technology</strong>
+            <span>210 stories • Follow</span>
+          </a>
+          <a class="cat-tile" href="index.html">
+            <span class="cat-tile__icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 3h6M10 3v6l-5 9a2.4 2.4 0 0 0 2 3.6h10a2.4 2.4 0 0 0 2-3.6l-5-9V3"/></svg></span>
+            <strong>Science</strong>
+            <span>174 stories • Follow</span>
+          </a>
+          <a class="cat-tile" href="index.html">
+            <span class="cat-tile__icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+            <strong>Business</strong>
+            <span>88 stories • Follow</span>
+          </a>
+          <a class="cat-tile" href="index.html">
+            <span class="cat-tile__icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></span>
+            <strong>Sports</strong>
+            <span>64 stories • Follow</span>
+          </a>
+        </div>
+
+        <section class="section" aria-labelledby="featured-source">
+          <div class="section-head container">
+            <h2 class="t-section" id="featured-source">Featured source</h2>
+          </div>
+          <div class="hero-wrap hero-wrap--flat">
+            <a class="hero-card" href="article.html">
+              <img src="https://picsum.photos/seed/webb/800/450" alt="Webb telescope featured story" width="800" height="450" />
+              <span class="hero-card__overlay">
+                <span><span class="badge">Featured</span></span>
+                <span class="t-hero">Webb telescope week: 5 must-read discoveries</span>
+                <span class="meta"><span>ESA</span><span class="meta__dot">Editors pick</span></span>
+              </span>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a href="index.html">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 3l9 8.5"/><path d="M5 10.5V21h5v-6h4v6h5V10.5"/></svg>
+        Home
+      </a>
+      <a href="search.html">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        Search
+      </a>
+      <a href="bookmarks.html">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>
+        Saved
+      </a>
+      <a href="categories.html" aria-current="page">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>
+        Topics
+      </a>
+    </nav>
+  </div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NewsApp — Home</title>
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/screens.css" />
+</head>
+<body>
+  <div class="phone">
+    <div class="phone__scroll">
+
+      <!-- AppBar -> Flutter AppBar -->
+      <header class="appbar">
+        <div class="appbar__logo" aria-hidden="true">N</div>
+        <div class="appbar__title">
+          <strong>NewsApp</strong>
+          <span>Space &amp; Tech Daily</span>
+        </div>
+        <a class="icon-btn" href="search.html" aria-label="Search">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </a>
+        <a class="icon-btn" href="bookmarks.html" aria-label="Saved articles">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>
+        </a>
+      </header>
+
+      <!-- Category tabs -> Flutter TabBar -->
+      <nav class="chip-row" aria-label="Categories">
+        <a class="chip chip--active" href="index.html" aria-selected="true">All</a>
+        <a class="chip" href="categories.html" aria-selected="false">NASA</a>
+        <a class="chip" href="categories.html" aria-selected="false">SpaceX</a>
+        <a class="chip" href="categories.html" aria-selected="false">Technology</a>
+        <a class="chip" href="categories.html" aria-selected="false">Science</a>
+        <a class="chip" href="categories.html" aria-selected="false">Business</a>
+      </nav>
+
+      <main>
+        <!-- Breaking hero -> Flutter featured Card -->
+        <div class="hero-wrap">
+          <a class="hero-card" href="article.html">
+            <img src="https://picsum.photos/seed/nasa-iss/800/450" alt="International Space Station over Earth" width="800" height="450" />
+            <span class="hero-card__overlay">
+              <span><span class="badge">Breaking</span></span>
+              <span class="t-hero">NASA adjusts ISS flight schedule for upcoming missions</span>
+              <span class="meta"><span>NASA</span><span class="meta__dot">2h ago</span><span class="meta__dot">5 min read</span></span>
+            </span>
+          </a>
+        </div>
+
+        <!-- Trending -> Flutter horizontal ListView -->
+        <section class="section" aria-labelledby="trending-title">
+          <div class="section-head container">
+            <h2 class="t-section" id="trending-title">Trending now</h2>
+            <a class="link-more" href="categories.html">See all ›</a>
+          </div>
+          <div class="h-scroll">
+            <a class="trend-card" href="article.html">
+              <img src="https://picsum.photos/seed/starship/400/300" alt="Starship rocket on launch pad" width="400" height="260" />
+              <span class="trend-card__body">
+                <span class="meta"><span>SpaceX</span><span class="meta__dot">4h ago</span></span>
+                <span class="t-title">Starship completes key test ahead of next launch attempt</span>
+              </span>
+            </a>
+            <a class="trend-card" href="article.html">
+              <img src="https://picsum.photos/seed/webb/400/300" alt="Deep space galaxy field" width="400" height="260" />
+              <span class="trend-card__body">
+                <span class="meta"><span>ESA</span><span class="meta__dot">6h ago</span></span>
+                <span class="t-title">Webb telescope spots distant galaxy in stunning detail</span>
+              </span>
+            </a>
+            <a class="trend-card" href="article.html">
+              <img src="https://picsum.photos/seed/artemis/400/300" alt="Astronauts training for Artemis mission" width="400" height="260" />
+              <span class="trend-card__body">
+                <span class="meta"><span>NASA</span><span class="meta__dot">8h ago</span></span>
+                <span class="t-title">Artemis crew trains for historic Moon return mission</span>
+              </span>
+            </a>
+            <a class="trend-card" href="article.html">
+              <img src="https://picsum.photos/seed/smallSat/400/300" alt="Smallsat deploying over Earth" width="400" height="260" />
+              <span class="trend-card__body">
+                <span class="meta"><span>Rocket Lab</span><span class="meta__dot">12h ago</span></span>
+                <span class="t-title">Smallsats launch to boost climate monitoring network</span>
+              </span>
+            </a>
+          </div>
+        </section>
+
+        <!-- Latest -> Flutter ListView.builder -->
+        <section class="section" aria-labelledby="latest-title">
+          <div class="section-head container">
+            <h2 class="t-section" id="latest-title">Latest news</h2>
+            <a class="link-more" href="search.html">Search ›</a>
+          </div>
+          <div class="news-list">
+            <a class="news-card" href="article.html">
+              <img class="news-card__thumb" src="https://picsum.photos/seed/nasa-iss/200/200" alt="ISS thumbnail" width="88" height="88" />
+              <span class="news-card__body">
+                <span class="meta"><span>NASA</span><span class="meta__dot">2h ago</span></span>
+                <span class="t-title">NASA adjusts ISS flight schedule for upcoming missions</span>
+                <span class="news-card__foot">
+                  <span class="meta">5 min read</span>
+                  <span class="bookmark-btn" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg></span>
+                </span>
+              </span>
+            </a>
+            <a class="news-card" href="article.html">
+              <img class="news-card__thumb" src="https://picsum.photos/seed/starship/200/200" alt="Starship thumbnail" width="88" height="88" />
+              <span class="news-card__body">
+                <span class="meta"><span>SpaceX</span><span class="meta__dot">4h ago</span></span>
+                <span class="t-title">Starship completes key test ahead of next launch attempt</span>
+                <span class="news-card__foot">
+                  <span class="meta">4 min read</span>
+                  <span class="bookmark-btn bookmark-btn--saved" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg></span>
+                </span>
+              </span>
+            </a>
+            <a class="news-card" href="article.html">
+              <img class="news-card__thumb" src="https://picsum.photos/seed/webb/200/200" alt="Webb thumbnail" width="88" height="88" />
+              <span class="news-card__body">
+                <span class="meta"><span>ESA</span><span class="meta__dot">6h ago</span></span>
+                <span class="t-title">Webb telescope spots distant galaxy in stunning detail</span>
+                <span class="news-card__foot">
+                  <span class="meta">6 min read</span>
+                  <span class="bookmark-btn" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg></span>
+                </span>
+              </span>
+            </a>
+            <a class="news-card" href="article.html">
+              <img class="news-card__thumb" src="https://picsum.photos/seed/artemis/200/200" alt="Artemis thumbnail" width="88" height="88" />
+              <span class="news-card__body">
+                <span class="meta"><span>NASA</span><span class="meta__dot">8h ago</span></span>
+                <span class="t-title">Artemis crew trains for historic Moon return mission</span>
+                <span class="news-card__foot">
+                  <span class="meta">7 min read</span>
+                  <span class="bookmark-btn" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg></span>
+                </span>
+              </span>
+            </a>
+            <a class="news-card" href="article.html">
+              <img class="news-card__thumb" src="https://picsum.photos/seed/smallSat/200/200" alt="Smallsat thumbnail" width="88" height="88" />
+              <span class="news-card__body">
+                <span class="meta"><span>Rocket Lab</span><span class="meta__dot">12h ago</span></span>
+                <span class="t-title">Smallsats launch to boost climate monitoring network</span>
+                <span class="news-card__foot">
+                  <span class="meta">3 min read</span>
+                  <span class="bookmark-btn" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg></span>
+                </span>
+              </span>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- BottomNav -> Flutter NavigationBar -->
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a href="index.html" aria-current="page">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 3l9 8.5"/><path d="M5 10.5V21h5v-6h4v6h5V10.5"/></svg>
+        Home
+      </a>
+      <a href="search.html">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        Search
+      </a>
+      <a href="bookmarks.html">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>
+        Saved
+      </a>
+      <a href="categories.html">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>
+        Topics
+      </a>
+    </nav>
+  </div>
+</body>
+</html>
