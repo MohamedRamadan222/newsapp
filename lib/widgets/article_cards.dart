@@ -243,7 +243,7 @@ class NewsCard extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            '${article.readMinutes} min read',
+                            article.dateLabel,
                             style: Theme.of(context).textTheme.labelMedium,
                           ),
                         ),

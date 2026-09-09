@@ -16,11 +16,15 @@ class AppShell extends StatefulWidget {
   final SpaceflightApi api;
   final BookmarksStore bookmarks;
   final FollowedSources followed;
+  final int initialIndex;
+  final String searchQuery;
   const AppShell({
     super.key,
     required this.api,
     required this.bookmarks,
     required this.followed,
+    this.initialIndex = 0,
+    this.searchQuery = '',
   });
 
   @override
@@ -28,7 +32,7 @@ class AppShell extends StatefulWidget {
 }
 
 class _AppShellState extends State<AppShell> {
-  int _index = 0;
+  late int _index = widget.initialIndex;
 
   void _open(Article article) {
     Navigator.of(context).push(
@@ -53,7 +57,12 @@ class _AppShellState extends State<AppShell> {
         onOpen: _open,
         onSeeAll: (i) => setState(() => _index = i),
       ),
-      SearchScreen(api: widget.api, bookmarks: widget.bookmarks, onOpen: _open),
+      SearchScreen(
+        api: widget.api,
+        bookmarks: widget.bookmarks,
+        onOpen: _open,
+        initialQuery: widget.searchQuery,
+      ),
       SavedScreen(
         bookmarks: widget.bookmarks,
         onOpen: _open,

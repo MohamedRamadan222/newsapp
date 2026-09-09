@@ -63,12 +63,22 @@ class Article {
   }
 
   /// Short "2h ago / 3d ago" label. Maps to `.meta` in the HTML design.
-  String timeAgo({DateTime? now}) {
-    final diff = (now ?? DateTime.now().toUtc()).difference(
+  String timeAgo({DateTime? now}) {    final diff = (now ?? DateTime.now().toUtc()).difference(
       publishedAt.toUtc(),
     );
     if (diff.inMinutes < 60) return '${diff.inMinutes.clamp(1, 59)}m ago';
     if (diff.inHours < 24) return '${diff.inHours}h ago';
     return '${diff.inDays.clamp(1, 365)}d ago';
+  }
+
+  static const _months = [
+    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+  ];
+
+  /// "Apr 15, 2026" label for card footers.
+  String get dateLabel {
+    final d = publishedAt.toLocal();
+    return '${_months[d.month - 1]} ${d.day}, ${d.year}';
   }
 }

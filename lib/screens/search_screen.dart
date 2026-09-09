@@ -44,7 +44,10 @@ class _SearchScreenState extends State<SearchScreen> {
     _loadRecents();
     if (widget.initialQuery.isNotEmpty) {
       _controller.text = widget.initialQuery;
-      _run(widget.initialQuery);
+      // Post-frame: _run touches FocusScope, which isn't ready in initState.
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _run(widget.initialQuery);
+      });
     }
   }
 
@@ -52,7 +55,9 @@ class _SearchScreenState extends State<SearchScreen> {
     final prefs = await SharedPreferences.getInstance();
     if (!mounted) return;
     setState(() {
-      _recent = prefs.getStringList(_recentsKey) ?? const <String>[];
+      _recent = List.of(
+        prefs.getStringList(_recentsKey) ?? const <String>[],
+      );
     });
   }
 

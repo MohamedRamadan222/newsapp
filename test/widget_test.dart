@@ -1,10 +1,17 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:newsapp/models/article.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:newsapp/screens/search_screen.dart';
 import 'package:newsapp/services/bookmarks_store.dart';
 import 'package:newsapp/services/followed_sources.dart';
+import 'package:newsapp/services/spaceflight_api.dart';
+import 'package:newsapp/widgets/article_cards.dart';
+
+import 'preview_helper.dart';
 
 void main() {
   test('Article parses Spaceflight API shape', () {
@@ -32,6 +39,30 @@ void main() {
     await followed.toggle('ESA');
     expect(followed.isFollowed('ESA'), isTrue);
   });
+  testWidgets('SearchScreen accepts an initial query', (tester) async {
+    HttpOverrides.global = StubImageOverrides();
+    addTearDown(() => HttpOverrides.global = null);
+    SharedPreferences.setMockInitialValues({});
+    final api = SpaceflightApi(client: buildMockApiClient());
+    addTearDown(api.dispose);
+    final bookmarks = await BookmarksStore.load();
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: SearchScreen(
+            api: api,
+            bookmarks: bookmarks,
+            onOpen: (_) {},
+            initialQuery: 'moon',
+          ),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(find.textContaining('Results for'), findsOneWidget);
+    expect(find.byType(NewsCard), findsWidgets);
+  });
+
   testWidgets('App boots to bottom navigation', (tester) async {
     SharedPreferences.setMockInitialValues({});
     final bookmarks = await BookmarksStore.load();

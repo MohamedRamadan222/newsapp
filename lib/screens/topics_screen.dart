@@ -75,7 +75,7 @@ class TopicsScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 12,
                 crossAxisSpacing: 12,
-                mainAxisExtent: 168,
+                mainAxisExtent: 184,
               ),
               itemCount: _topics.length,
               itemBuilder: (_, i) {
@@ -103,10 +103,14 @@ class TopicsScreen extends StatelessWidget {
                           const SizedBox(height: 8),
                           Text(
                             t.name,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
                           Text(
                             t.detail,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                             style: Theme.of(context).textTheme.labelMedium,
                           ),
                           const Spacer(),

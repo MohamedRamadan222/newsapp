@@ -53,7 +53,6 @@ class FilterChipPill extends StatelessWidget {
       child: Container(
         height: 36,
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        alignment: Alignment.center,
         decoration: BoxDecoration(
           color: selected ? AppTheme.primary : AppTheme.card,
           border: Border.all(
@@ -61,10 +60,16 @@ class FilterChipPill extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(999),
         ),
-        child: Text(
-          label,
-          style: Theme.of(context).textTheme.labelLarge
-              ?.copyWith(color: selected ? AppTheme.onPrimary : AppTheme.muted),
+        // widthFactor keeps the pill shrink-wrapped in Wrap/Row layouts
+        // (a plain alignment would stretch it to the full line width).
+        child: Center(
+          widthFactor: 1,
+          child: Text(
+            label,
+            style: Theme.of(context).textTheme.labelLarge?.copyWith(
+              color: selected ? AppTheme.onPrimary : AppTheme.muted,
+            ),
+          ),
         ),
       ),
     );
